@@ -9,8 +9,10 @@ composer install
 ```
 
 Создание скрипта обрабатывающего запросы от Алисы
+
 Создаем файл index.php
 ```php
+<?php
 header('Content-type:application/json;charset=utf-8');
 include 'vendor/autoload.php';
 $in = new \alexstar\JsonMaker(file_get_contents('php://input'));
@@ -31,5 +33,6 @@ if(isset($in->version)){
     $out->response->buttons[0]->url = 'https://alexstar.ru/';
     echo $out;
 }
+?>
 ```
 
